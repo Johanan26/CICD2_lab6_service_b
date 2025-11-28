@@ -6,7 +6,7 @@ SERVICE_A_BASE_URL = os.getenv("SERVICE_A_BASE_URL", "http://localhost:8001")
 
 @app.get("/api/proxy-greet")
 def call_service_a(name: str = "world"):
-    # Build the path-style URL for Service A
+    # #Build the path-style URL for Service A
     url = f"{SERVICE_A_BASE_URL}/api/greet/{name}"
     with httpx.Client() as client:
         r = client.get(url) # no params= now
